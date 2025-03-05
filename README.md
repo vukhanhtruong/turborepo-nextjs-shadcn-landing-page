@@ -1,6 +1,7 @@
-# Turborepo starter with shadcn/ui
+# Turborepo starter with nextjs & shadcn/ui
 
 ![Static Badge](https://img.shields.io/badge/shadcn%2Fui-2.1.2-blue?link=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui)
+![NextJS Badge](https://img.shields.io/badge/nextjs-15-blue)
 
 This is Turborepo starter with shadcn/ui pre-configured.
 
@@ -15,13 +16,13 @@ This is Turborepo starter with shadcn/ui pre-configured.
 Clone the repository:
 
 ```sh
-git clone https://github.com/dan5py/turborepo-shadcn-ui.git
+git clone https://github.com/vukhanhtruong/turborepo-nextjs-shadcn-landing-page.git
 ```
 
 Install dependencies:
 
 ```sh
-cd turborepo-shadcn-ui
+cd turborepo-nextjs-shadcn-landing-page
 pnpm install
 ```
 
@@ -60,7 +61,7 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
+- `marketing`: a landing page [Next.js](https://nextjs.org/)
 - `@repo/ui`: a stub React component library (🚀 powered by **shadcn/ui**)
 - `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
@@ -80,7 +81,7 @@ This Turborepo has some additional tools already setup for you:
 To build all apps and packages, run the following command:
 
 ```sh
-cd turborepo-shadcn-ui
+cd turborepo-nextjs-shadcn-landing-page
 pnpm build
 ```
 
@@ -89,7 +90,7 @@ pnpm build
 To develop all apps and packages, run the following command:
 
 ```sh
-cd turborepo-shadcn-ui
+cd turborepo-nextjs-shadcn-landing-page
 pnpm dev
 ```
 
@@ -100,7 +101,7 @@ Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo
 By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
 
 ```
-cd turborepo-shadcn-ui
+cd turborepo-nextjs-shadcn-landing-page
 npx turbo login
 ```
 
@@ -126,3 +127,7 @@ Learn more about the power of Turborepo:
 Learn more about shadcn/ui:
 
 - [Documentation](https://ui.shadcn.com/docs)
+
+## Reference
+
+- [Landing page template](https://github.com/leoMirandaa/shadcn-landing-page)
