@@ -55,6 +55,12 @@ pnpm turbo gen workspace --name <app-name> --copy
 > [!NOTE]
 > Remember to run `pnpm install` after copying an app.
 
+### Start storybook
+
+```sh
+pnpm storybook
+```
+
 ## What's inside?
 
 This Turborepo includes the following packages/apps:
@@ -62,6 +68,7 @@ This Turborepo includes the following packages/apps:
 ### Apps and Packages
 
 - `marketing`: a landing page [Next.js](https://nextjs.org/)
+- `docs`: storybook document for `@repo/ui`
 - `@repo/ui`: a stub React component library (🚀 powered by **shadcn/ui**)
 - `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
