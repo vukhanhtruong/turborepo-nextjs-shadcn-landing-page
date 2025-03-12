@@ -1,6 +1,11 @@
 import { Statistics } from "./Statistics";
 
-export const About = () => {
+export interface AboutInterface {
+  title: string;
+  description: string;
+}
+
+export const About = (data: AboutInterface) => {
   return (
     <section id="about" className="container py-24 sm:py-32">
       <div className="py-12 rounded-lg border bg-muted/50">
@@ -14,16 +19,11 @@ export const About = () => {
             <div className="pb-6">
               <h2 className="text-3xl font-bold md:text-4xl">
                 <span className="text-transparent bg-clip-text bg-gradient-to-b from-primary/60 to-primary">
-                  About{" "}
+                  {data.title}
                 </span>
-                Company
               </h2>
               <p className="mt-4 text-xl text-muted-foreground">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit.
+                {data.description}
               </p>
             </div>
 
