@@ -8,7 +8,7 @@ interface LinkInterface {
 export interface HeroInterface {
   headline: string;
   excerpt: string;
-  links: [LinkInterface];
+  links: LinkInterface[];
 }
 
 export const Hero = (data: HeroInterface) => {
@@ -25,6 +25,7 @@ export const Hero = (data: HeroInterface) => {
           {data?.links?.map(({ title, link }) => {
             return (
               <a
+                key={link}
                 rel="noreferrer noopener"
                 href={link}
                 target="_blank"

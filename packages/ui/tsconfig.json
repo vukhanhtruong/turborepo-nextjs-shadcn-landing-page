@@ -1,6 +1,7 @@
 {
   "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {
+    "types": ["jest", "node", "@testing-library/jest-dom"],
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -9,6 +10,6 @@
       "@repo/ui/*": ["./src/*"]
     }
   },
-  "include": ["src"],
+  "include": [".", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

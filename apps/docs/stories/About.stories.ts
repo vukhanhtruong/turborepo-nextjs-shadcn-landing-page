@@ -18,8 +18,14 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 export const AboutSection: Story = {
   args: {
-    user: {
-      name: "Jane Doe",
-    },
+    title: "About Our Company",
+    description: "We are a leading provider of innovative solutions that help businesses transform their digital presence. Our team of experts is dedicated to delivering exceptional results that exceed expectations."
+  },
+};
+
+export const ShortDescription: Story = {
+  args: {
+    title: "Who We Are",
+    description: "A creative team passionate about design and technology."
   },
 };
