@@ -1,10 +1,7 @@
-import { strapi } from "@strapi/client";
-import { About } from "@repo/ui/components/About";
 import { Cta } from "@repo/ui/components/Cta";
 import { FAQ } from "@repo/ui/components/FAQ";
 import { Features } from "@repo/ui/components/Features";
 import { Footer } from "@repo/ui/components/Footer";
-import { Hero } from "@repo/ui/components/Hero";
 import { HowItWorks } from "@repo/ui/components/HowItWorks";
 import { Navbar } from "@repo/ui/components/Navbar";
 import { Newsletter } from "@repo/ui/components/Newsletter";
@@ -15,36 +12,35 @@ import { Sponsors } from "@repo/ui/components/Sponsors";
 import { Team } from "@repo/ui/components/Team";
 import { Testimonials } from "@repo/ui/components/Testimonials";
 import { ThemeProvider } from "@repo/ui/components/theme-provider";
+import { HeroComponent } from "./components/Hero";
+import { client } from "./utils/strapi";
+import { About } from "@repo/ui/components/About";
 import "../index.css";
 
-const client = strapi({
-  baseURL: process.env.STRAPI_URL || "",
-  auth: process.env.STRAPI_TOKEN,
-});
+// https://nextjs.org/docs/app/building-your-application/data-fetching/fetching#reference
+export const dynamic = "force-dynamic";
 
+const baseURL = process.env.STRAPI_URL;
 export default async function Page() {
-  const aboutQuery = client.single("about");
-  const heroQuery = client.single("hero");
+  const homeQuery = client.single(
+    // "homepage?populate=*",
+    "homepage?populate[blocks][on][sections.about][populate]=*",
+  );
 
-  const [aboutResult, heroResult] = await Promise.all([
-    aboutQuery.find(),
-    heroQuery.find(),
-  ]);
-
-  const about = aboutResult.data;
-  const hero = heroResult.data;
+  const home = await homeQuery.find();
+  const [about] = home.data.blocks;
 
   return (
     <>
       <ThemeProvider>
         <Navbar />
-        <Hero
-          headline={hero.headline}
-          excerpt={hero.excerpt}
-          links={hero.links}
-        />
+        <HeroComponent />
         <Sponsors />
-        <About title={about.title} description={about.description} />
+        <About
+          title={about.title}
+          excerpt={about.excerpt}
+          picture={`${baseURL}${about.picture.formats.small.url}`}
+        />
         <HowItWorks />
         <Features />
         <Services />

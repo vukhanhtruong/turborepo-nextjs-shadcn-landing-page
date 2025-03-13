@@ -1,5 +1,29 @@
 import type { Schema, Struct } from "@strapi/strapi";
 
+export interface SectionsAbout extends Struct.ComponentSchema {
+  collectionName: "components_sections_abouts";
+  info: {
+    displayName: "About";
+  };
+  attributes: {
+    excerpt: Schema.Attribute.String;
+    picture: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsHero extends Struct.ComponentSchema {
+  collectionName: "components_sections_heroes";
+  info: {
+    displayName: "Hero";
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    headline: Schema.Attribute.String;
+    links: Schema.Attribute.JSON;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: "components_shared_media";
   info: {
@@ -65,6 +89,8 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module "@strapi/strapi" {
   export module Public {
     export interface ComponentSchemas {
+      "sections.about": SectionsAbout;
+      "sections.hero": SectionsHero;
       "shared.media": SharedMedia;
       "shared.quote": SharedQuote;
       "shared.rich-text": SharedRichText;

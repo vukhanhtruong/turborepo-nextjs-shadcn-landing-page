@@ -2,7 +2,8 @@ import { Statistics } from "./Statistics";
 
 export interface AboutInterface {
   title: string;
-  description: string;
+  excerpt: string;
+  picture: string;
 }
 
 export const About = (data: AboutInterface) => {
@@ -11,7 +12,7 @@ export const About = (data: AboutInterface) => {
       <div className="py-12 rounded-lg border bg-muted/50">
         <div className="flex flex-col-reverse gap-8 px-6 md:flex-row md:gap-12">
           <img
-            src="/pilot.png"
+            src={data.picture}
             alt=""
             className="object-contain rounded-lg w-[300px]"
           />
@@ -23,7 +24,7 @@ export const About = (data: AboutInterface) => {
                 </span>
               </h2>
               <p className="mt-4 text-xl text-muted-foreground">
-                {data.description}
+                {data.excerpt}
               </p>
             </div>
 
