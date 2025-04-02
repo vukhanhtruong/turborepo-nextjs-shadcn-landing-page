@@ -26,6 +26,12 @@ cd turborepo-nextjs-shadcn-landing-page
 pnpm install
 ```
 
+Start dev environment:
+
+```sh
+pnpm dev
+```
+
 ### Add ui components
 
 Use the pre-made script:
